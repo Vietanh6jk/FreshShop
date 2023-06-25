@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="/css/home.css" th:href="@{/css/home.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <!-- Thanh điều hướng -->
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <li class="navbar-item"><a href="/">Trang chủ</a></li>
+            <li class="navbar-item"><a href="/gioi-thieu">Giới thiệu</a></li>
+            <li class="navbar-item"><a href="/lien-he">Liên hệ</a></li>
+            <li class="navbar-item"><a href="/tin-tuc">Tin tức</a></li>
+        </ul>
+    </nav>
+
+    <!-- Thanh trượt -->
+<!--    <div class="slider">-->
+<!--        <img src="/images/slide1.jpg" alt="slide1"/>-->
+<!--        <img src="/images/slide2.jpg" alt="slide2"/>-->
+<!--        <img src="/images/slide3.jpg" alt="slide3"/>-->
+<!--    </div>-->
+
+    <!-- Tiêu đề -->
+    <div class="header">
+        <h1 class="header-title">Cửa hàng rau củ sạch</h1>
+        <p class="header-slogan">Chất lượng tốt - Giá cả phải chăng - Giao hàng nhanh chóng</p>
+    </div>
+
+    <!-- Thanh tìm kiếm -->
+    <div class="search-bar">
+        <form th:action="@{/nongsan/search}" method="get">
+            <input type="text" name="query" placeholder="Tìm kiếm"/>
+            <button type="submit">Tìm kiếm</button>
+        </form>
+    </div>
+
+    <!-- Bố cục lưới -->
+    <div class="grid">
+        <!-- Danh mục sản phẩm -->
+        <div class="category">
+            <h3>Danh mục sản phẩm</h3>
+            <ul class="category-list">
+                <li class="category-item"><a href="/nongsan/rau-xanh">Rau xanh</a></li>
+                <li class="category-item"><a href="/nongsan/cu">Củ</a></li>
+                <li class="category-item"><a href="/nongsan/qua">Quả</a></li>
+                <li class="category-item"><a href="/nongsan/nam">Nấm</a></li>
+            </ul>
+        </div>
+
+        <!-- Sản phẩm -->
+        <div class="vegetableResult" th:each="nongsan:${listNongSan}">
+            <img th:src="${nongsan.getHinhAnh()}" alt="vegetable"/>
+            <span class="vegetableName" th:text="${nongsan.getTenNongSan()}"></span>
+            <span>900.00</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Giỏ hàng</title>
+  <link href="/css/home.css" th:href="@{/css/home.css}" rel="stylesheet" />
+</head>
+<body>
+    <h3>Giỏ hàng</h3>
+  <div class="row">
+    <div class="vegetableResult"  th:each="nongsan : ${cart}">
+        <img th:src="${nongsan.getHinhAnh()}" alt="vegetable"/>
+        <span class="vegetableName" th:text="${nongsan.getTenNongSan()}"></span>
+        <span>900.00</span>
+    </div>
+  </div>
+
+  <div>
+      <h3>Thanh toán: 500.000Đ</h3>
+  </div>
+
+</body>
+</html>

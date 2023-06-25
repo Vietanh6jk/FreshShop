@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+   margin:10px;
+   padding:5px;	
+}
+
+.row{
+    width: 95%px;
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0px;
+    word-wrap: break-word;
+    flex-wrap: wrap;	
+}
+
+.vegetableResult {
+    width: 200px;
+    height: 250px;
+    margin-top:30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 6px 16px;
+    background: white;
+    cursor: pointer;
+    color: black;
+}
+
+img{
+    width: 200px;
+    height: 150px;
+}    
+
+.vegetableName {
+    font-size: 1.0rem;
+}
